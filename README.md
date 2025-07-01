@@ -1,56 +1,98 @@
 # Hirst-Style Dot Painting Generator
 
-A Python turtle graphics program that creates digital art inspired by Damien Hirst’s famous spot paintings. Uses extracted image colors to generate a systematic grid of colorful dots, mimicking the iconic contemporary art style.
+A Python turtle graphics program that creates digital art inspired by Damien Hirst's famous spot paintings using extracted image colors.
 
-## Features
+## 🚀 Features
 
-- **Hirst-Inspired Design:** Recreates the famous spot painting aesthetic digitally.
-- **Color Palette from Real Image:** Uses 27 colors extracted from an actual image using colorgram.
-- **Systematic Grid Layout:** Creates a perfect 10x10 grid of dots (100 total).
-- **Random Color Selection:** Each dot gets a randomly chosen color from the extracted palette.
-- **Professional Spacing:** 50-pixel spacing between dots for balanced composition.
-- **Clean Presentation:** Hidden turtle cursor for gallery-ready appearance.
+- **Grid-Based Art**: Creates systematic 10x10 dot patterns
+- **Color Extraction**: Uses real image colors for authentic palettes
+- **Random Placement**: Each dot gets a randomly selected color
+- **Gallery-Ready**: Clean, professional presentation
+- **Customizable**: Easy to modify grid size and colors
 
-## Technical Implementation
+## 🛠️ Technologies Used
 
-- **Grid System:** 10 dots per row, 10 rows total.
-- **Positioning Algorithm:** Starts from bottom-left, moves systematically.
-- **Row Management:** Automatic line breaks every 10 dots.
-- **Color Randomization:** `random.choice()` ensures unpredictable color distribution.
-- **Dot Size:** 20-pixel diameter dots for optimal visual impact.
+- Python 3.x
+- Turtle Graphics Module
+- Random Module
+- Colorgram.py (for color extraction)
 
-### Example Grid Positioning Logic
-
-```python
-for dot_count in range(1, 101):
-    tim.dot(20, random.choice(color_list))  # Create colored dot
-    tim.forward(50)                         # Move to next position
-
-    if dot_count % 10 == 0:                 # End of row
-        # Move to start of next row
-        tim.setheading(90)    # Face up
-        tim.forward(50)       # Move up one row
-        tim.setheading(180)   # Face left
-        tim.forward(500)      # Return to left edge
-        tim.setheading(0)     # Face right for next row
-
-## Color Palette
-
-Features 27 carefully extracted colors, including:
-- **Warm earth tones:** (202, 164, 109), (150, 75, 49)
-- **Cool blues:** (52, 93, 124), (133, 163, 185)
-- **Vibrant accents:** (140, 30, 19), (148, 17, 20)
-- **Natural greens:** (46, 122, 86), (13, 99, 71)
-- **Soft pastels:** (238, 240, 245), (233, 175, 164)
-
-## Artistic Style
-
-- **Contemporary Digital Art:** Modern interpretation of a famous art movement.
-- **Systematic Composition:** Mathematical precision meets random color.
-- **Minimalist Aesthetic:** Clean, gallery-worthy presentation.
-- **Color Theory Application:** Balanced palette with varied hues and saturation.
-
-## Usage
+## 📋 Prerequisites
 
 ```bash
-python hirst_dots.py
+Python 3.6 or higher
+```
+
+## 🔧 Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/hirst-dot-painting.git
+   ```
+
+2. **Navigate to project directory**
+   ```bash
+   cd hirst-dot-painting
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install colorgram.py
+   ```
+
+## 🎮 Usage
+
+**Run the program:**
+```bash
+python main.py
+```
+
+**Customize colors:**
+```python
+# Extract colors from your own image
+import colorgram
+colors = colorgram.extract("your_image.jpg", 30)
+```
+
+## 📸 Example Output
+
+The program creates a 10x10 grid of colorful dots like this:
+```
+● ● ● ● ● ● ● ● ● ●
+● ● ● ● ● ● ● ● ● ●
+● ● ● ● ● ● ● ● ● ●
+● ● ● ● ● ● ● ● ● ●
+```
+*(Each dot is a different random color)*
+
+## 🎨 Customization Options
+
+```python
+# Change grid size
+number_of_dots = 64   # Creates 8x8 grid
+number_of_dots = 144  # Creates 12x12 grid
+
+# Adjust dot size
+tim.dot(15, color)    # Smaller dots
+tim.dot(25, color)    # Larger dots
+
+# Modify spacing
+tim.forward(40)       # Closer together
+tim.forward(60)       # Further apart
+```
+
+## 🤝 Contributing
+
+Feel free to fork this project and submit pull requests!
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+## 👤 Author
+
+**Your Name**
+- GitHub: [@yourusername](https://github.com/yourusername)
+
+---
+⭐ Star this repo if you found it helpful!
